@@ -1,0 +1,561 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="getEmailAttachment" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1261,6971" sap2010:WorkflowViewState.IdRef="getEmailAttachment_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="47">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.Activities.Contracts</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.IMAP.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Mail.Activities.Business.ForEachMail</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.Mail.Activities.Business</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="74">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>UiPath.Activities.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="E-Commerce Listing Bot" sap:VirtualizedContainerService.HintSize="1271,6906" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Default="abc@gmail.com" Name="emailAddress" />
+      <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="mailMessage" />
+      <Variable x:TypeArguments="x:String" Name="senderEmailAddress" />
+      <Variable x:TypeArguments="x:String" Name="name" />
+      <Variable x:TypeArguments="x:String" Name="price" />
+      <Variable x:TypeArguments="x:String" Name="brand" />
+      <Variable x:TypeArguments="x:String" Name="description" />
+      <Variable x:TypeArguments="x:String" Name="discount" />
+      <Variable x:TypeArguments="x:String" Name="rating" />
+      <Variable x:TypeArguments="x:String" Name="stock" />
+      <Variable x:TypeArguments="x:String" Name="category" />
+      <Variable x:TypeArguments="x:String" Name="thumbnail" />
+      <Variable x:TypeArguments="x:String" Name="image" />
+      <Variable x:TypeArguments="x:String" Name="getAttachmentName" />
+      <Variable x:TypeArguments="x:String" Name="id" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign DisplayName="Get Email Address" sap:VirtualizedContainerService.HintSize="1229,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[emailAddress]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">abc@gmail.com</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:GetPassword ProtectedPassword="{x:Null}" DisplayName="Get Password" sap:VirtualizedContainerService.HintSize="1229,22" sap2010:WorkflowViewState.IdRef="GetPassword_2" />
+    <ui:GetIMAPMailMessages ClientName="{x:Null}" ClientVersion="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" DeleteMessages="False" DisplayName="Get IMAP Mail Messages" Email="[emailAddress]" EnableSSL="True" FilterExpression="[&quot;SUBJECT &quot;&quot;Product Details&quot;&quot;&quot;]" FilterExpressionCharacterSet="US-ASCII" sap:VirtualizedContainerService.HintSize="1229,22" sap2010:WorkflowViewState.IdRef="GetIMAPMailMessages_1" MailFolder="Inbox" MarkAsRead="True" Messages="[mailMessage]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" Port="993" SecureConnection="Auto" Server="imap.gmail.com" Top="5">
+      <ui:GetIMAPMailMessages.Password>
+        <InArgument x:TypeArguments="x:String">
+          <Literal x:TypeArguments="x:String" Value="" />
+        </InArgument>
+      </ui:GetIMAPMailMessages.Password>
+    </ui:GetIMAPMailMessages>
+    <ui:ReadTextFile File="{x:Null}" Content="[id]" DisplayName="Read Text File" FileName="lastID.txt" sap:VirtualizedContainerService.HintSize="1229,79" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1229,6471" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[mailMessage]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="snm:MailMessage">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="currentMail" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1193,6347" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If Condition="[currentMail.Subject.ToLower.StartsWith(&quot;product details&quot;)]" sap:VirtualizedContainerService.HintSize="1151,6255" sap2010:WorkflowViewState.IdRef="If_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence DisplayName="If Mail Subject has Product Details and has a Attachment" sap:VirtualizedContainerService.HintSize="730,6097" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:SaveMailAttachments Attachments="{x:Null}" DisplayName="Save Attachments" ExcludeInlineAttachments="False" FolderPath="Attachments" sap:VirtualizedContainerService.HintSize="688,89" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_2" Message="[currentMail]" OverwriteExisting="False" />
+                  <Assign DisplayName="Get Sender Email Address" sap:VirtualizedContainerService.HintSize="688,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[senderEmailAddress]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[currentMail.From.Address.ToString]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="688,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;Sender Email - &quot; + senderEmailAddress]" />
+                  <Sequence DisplayName="Read Excel File" sap:VirtualizedContainerService.HintSize="688,5675" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign sap:VirtualizedContainerService.HintSize="646,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[getAttachmentName]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[CType(currentMail.Attachments.FirstOrDefault, Attachment).Name]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope - Read Data from Excel Sheet" sap:VirtualizedContainerService.HintSize="646,5483" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[&quot;Attachments\&quot;+getAttachmentName]">
+                      <ui:ExcelApplicationScope.Body>
+                        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="612,5374" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="sd:DataTable" Name="dataTable" />
+                            </Sequence.Variables>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:ExcelReadRange AddHeaders="True" DataTable="[dataTable]" DisplayName="Read Range - Read Data from Excel Sheet" sap:VirtualizedContainerService.HintSize="570,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="Sheet1">
+                              <ui:ExcelReadRange.Range>
+                                <InArgument x:TypeArguments="x:String">
+                                  <Literal x:TypeArguments="x:String" Value="" />
+                                </InArgument>
+                              </ui:ExcelReadRange.Range>
+                            </ui:ExcelReadRange>
+                            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dataTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="570,4826" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                              <ui:ForEachRow.Body>
+                                <ActivityAction x:TypeArguments="sd:DataRow">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                                  </ActivityAction.Argument>
+                                  <Sequence DisplayName="Store Datafields in variables" sap:VirtualizedContainerService.HintSize="536,4712" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign sap:VirtualizedContainerService.HintSize="494,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[brand]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">[CurrentRow("Brand").ToString]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                    <Assign sap:VirtualizedContainerService.HintSize="494,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[name]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">[CurrentRow("Name").ToString]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                    <Assign sap:VirtualizedContainerService.HintSize="494,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[description]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">[CurrentRow("Description").ToString]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                    <Assign sap:VirtualizedContainerService.HintSize="494,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[price]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">[CurrentRow("Price").ToString]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                    <Assign sap:VirtualizedContainerService.HintSize="494,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[discount]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">[CurrentRow("Discount").ToString]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                    <Assign sap:VirtualizedContainerService.HintSize="494,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[rating]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">[CurrentRow("Rating").ToString]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                    <Assign sap:VirtualizedContainerService.HintSize="494,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[stock]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">[CurrentRow("Stock").ToString]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                    <Assign sap:VirtualizedContainerService.HintSize="494,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[category]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">[CurrentRow("Category").ToString]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                    <Assign sap:VirtualizedContainerService.HintSize="494,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[thumbnail]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">[CurrentRow("Thumbnail").ToString]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                    <Assign sap:VirtualizedContainerService.HintSize="494,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[image]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">[CurrentRow("Images").ToString]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="494,61" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[brand +&quot;, &quot;+ name + &quot;, &quot;+ description +&quot;, &quot;+  price +&quot;, &quot;+ discount +&quot;, &quot;+  rating +&quot;, &quot;+  stock +&quot;, &quot;+  category +&quot;, &quot;+  thumbnail + &quot;, &quot;+ image]" />
+                                    <Sequence DisplayName="Recording" sap:VirtualizedContainerService.HintSize="494,3519" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Browser Firefox: RoboShop | Home" sap:VirtualizedContainerService.HintSize="452,3427" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" ScopeGuid="10860e84-5ea9-498c-ae5a-44863a827f45" Version="V1">
+                                        <uix:NApplicationCard.Body>
+                                          <ActivityAction x:TypeArguments="x:Object">
+                                            <ActivityAction.Argument>
+                                              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                                            </ActivityAction.Argument>
+                                            <Sequence sap:VirtualizedContainerService.HintSize="418,3211" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,3117" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Id'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_12" ScopeIdentifier="10860e84-5ea9-498c-ae5a-44863a827f45" Text="[id]" Version="V1">
+                                                  <uix:NTypeInto.Target>
+                                                    <uix:TargetAnchorable BrowserURL="http://localhost:3000/createProduct" DesignTimeRectangle="416, 289, 532, 38" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='' class='form-control' aaname='' /&gt;" Guid="47030a72-d5ba-4acd-a00a-51f9d0d94bc7" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAhgAAAAqCAYAAADxqSKfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAG6SURBVHhe7d0xS0JRGMfhPnCro45tbW1O7S4tfQShoaamoKHEJZAmpe3kq/deMAm0Xrt0eB74D+d0PsAPyTorAADJBAYAkG4nMJarj/L8Mi8Pj09mZmZmBy/6ITqi1QVGXMaDt8V7cwMAcJjoh+iINjK6wIjyEBcAwE9FR0RPhC4wojoAAH6j7QmBAQCkERgAQDqBAQCkExgAQDqBAQCkExgAQDqBAQCkExgAQDqBAQCkExgAQDqBAQCkSwyM+3I1GJaru+a4Nh0Py/n67utGN9t/gAIA1On0gTG+b06t7bvzwXWZNjcAQF16CIwwL5OL734GAPx3PQXG2t21TzEAoFL9BcbstowGl2Uya84AQDX6C4zNe4EBADXyCQYAkK6/wIjfwbi4La/NEQCoR0+Bsf8WAKjH3wfG5tsj/tgWANTs9IGxvtudr6YCQO0SAwMAYEtgAADpBAYAkE5gAADpBAYAkE5gAADpBAYAkE5gAADpBAYAkG4vMJ5f5uVt8d6cAACOEx0RPRG6wFiuPjbVITIAgGNFP0RHRE+ELjBCXEZ5xAMzMzOzQxf90MZF2AkMAIAMAgMASFbKJ5Vv4mhdQttyAAAAAElFTkSuQmCC" InformativeScreenshot="e16c573bf633293a1254318820071bdc.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='RoboShop | Home' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                                                      <uix:TargetAnchorable.Anchors>
+                                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                          <uix:Target DesignTimeRectangle="676, 257, 14, 24" ElementType="Text" FriendlyName="'Id'" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='Id' check:innerText='Id' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABIAAAAcCAYAAABsxO8nAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACHSURBVEhLY/hPJTBqEGEwahBhQLpB17r+26m6/m+7BuVDAYpBa1M0/yumbIDycIDhY9DVDtf/iqpAcTAGGrCeDIMghqT/Xwvl//+/4X8izEDiDYJoSlwP5cIAyV4Da0B2DRQMsEFYvLY+ndQwgvIpD2wIgBgGw0BDifEaJWDUIMJgsBn0/z8ADRlYvJMFEZkAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                                                        </scg:List>
+                                                      </uix:TargetAnchorable.Anchors>
+                                                    </uix:TargetAnchorable>
+                                                  </uix:NTypeInto.Target>
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                </uix:NTypeInto>
+                                                <Assign sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_14">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:String">[id]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:String">[(CInt(id)+1).ToString]</InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Title'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="10860e84-5ea9-498c-ae5a-44863a827f45" Text="[name]" Version="V1">
+                                                  <uix:NTypeInto.Target>
+                                                    <uix:TargetAnchorable BrowserURL="http://localhost:3000/createProduct" DesignTimeRectangle="416, 399, 532, 38" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl name='title' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl name='title' tag='INPUT' type='' class='form-control' aaname='' /&gt;" Guid="e48a868b-0659-46f9-90fa-9a3c7f64124e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAhgAAAAqCAYAAADxqSKfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIHSURBVHhe7d0hT+tQGMfh+4FnkSBxOBxqHjPDRyBBcNVVN0EwMkNCUBDcubzdacM2BoX7QrvwPMlftGmmf2kP4VcBAEgmMACAdCuB8fD4VK6uF+X3n79mZmZmvRf9EB3R6gIjbsYDt3f39Q4AQD/RD9ERbWR0gRHlIS4AgM+KjoieCF1gRHUAAPyPticEBgCQRmAAAOkEBgCQTmAAAOkEBgCQTmAAAOkEBgCQTmAAAOkEBgCQTmAAAOm+MTAW5fRwv0xOLuv1FhfTMtmblvN6CQDsnpzAuDkrB3vP8bBtTVQIDAD4Kb7gDcZlOX6OiuOLevmG+eyoTA7PyrxeNwQGAOw8gQEApPvGwFh+IjmYxf+Hr59L2k8osTY0XgmMJkRePNsnXgCA4QwUGEt93mBsPFPPe4gMABivkQdG/NZROb1pLjrnJ/vvHxYFAAYz7sB4669TBAYAjNYOBMbqeQwAYPzGHRhbfwsAGLNBA2P9QGdj7V5z3mLtmflsunEuAwAYj2EDo95rzlS0bzJeiY5lZLyY8xcAMGpfEBgAwE8nMACAdAIDAEgnMACAdAIDAEgnMACAdAIDAEgnMACAdAIDAEi3ERhX14tye3dfrwAAPiY6InoidIHx8PjUVIfIAAA+KvohOiJ6InSBEeJmlEc8YGZmZtZ30Q9tXISVwAAAyCAwAIBkpfwDRuOaNB9g/yYAAAAASUVORK5CYII=" InformativeScreenshot="e82d6e03546e1884bb2b00dfc8053093.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='RoboShop | Home' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                                                      <uix:TargetAnchorable.Anchors>
+                                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                          <uix:Target DesignTimeRectangle="668, 367, 30, 24" ElementType="Text" FriendlyName="'Title'" FullSelectorArgument="&lt;webctrl aaname='Title' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Title' tag='LABEL' type='' class='' check:innerText='Title' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACIAAAAcCAYAAAAEN20fAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADTSURBVEhL7ZNRCoMwDIZ3FR982CUGPngQQfAmIt5F9DK642Q21tH+RtFJ3WD5IA+RmH406Y1+BBVBVARREURFkEMiTX6nKKmpt7lIW1AUF9TYdC+TyFDTIx4PWYu847LwIh4dZePhWWvTDfoqXYr9lQiPhsf0pDJxRmdiFhJEWNiplXp/KDKx50YWNXYfsX9gEdMrpXLg5A32MYQV2XqN14v4+7LGBaOReyGnRHAxGfjG/0BNXxWLvTkn4j7j+WYEuUnGCdgPgyDyHVQEURFERXyIXilo2c9NPNJUAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                                                        </scg:List>
+                                                      </uix:TargetAnchorable.Anchors>
+                                                    </uix:TargetAnchorable>
+                                                  </uix:NTypeInto.Target>
+                                                </uix:NTypeInto>
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Description'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="10860e84-5ea9-498c-ae5a-44863a827f45" Text="[description]" Version="V1">
+                                                  <uix:NTypeInto.Target>
+                                                    <uix:TargetAnchorable BrowserURL="http://localhost:3000/createProduct" DesignTimeRectangle="416, 509, 532, 38" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl name='description' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl name='description' tag='INPUT' type='' class='form-control' aaname='' /&gt;" Guid="c7c1827c-11c1-4105-9be4-e07280a274af" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAhgAAAAqCAYAAADxqSKfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMsSURBVHhe7d09T9tQFIDh/mDWjjCysbFlYmdh4ScgMdCpUyUGQCxIiAnE5ub429dO48AllPA80hniJLYz3ZfrSv1RAABkJjAAgOwGgfH88lpc39wXv37/McYYY4yZPdEP0RGNNjDiYHzg4fGpPgIAME/0Q3REExltYER5iAsA4K2iI6InQhsYUR0AAO/R9ITAAACyERgAQHYCAwDITmAAANkJDAAgO4EBAGQnMACA7AQGAJCdwAAAshMYAEB23yQw7ovTw/1ib3FVv36Hu/Pi4Od+cXxZvwYARjIGxlVxvFx490ZzVJze1R/5NAIDALYpe2CMFt7Lkyo0cizu21be+0lxUb8EAOb5+MAIX/WvfoEBAG+yncBYuliMdzHKY7G7UU7yKKWOkvb9w/Pitn4r3J4d9b67nObcTRQ0Oyfl96pHJAdn1f9N3zwyidfD83QxMby33nvlfaWPfdLHQ+n73fUG501+EwDsiq0FRrmQ9xbUUXCUQdAszOm5lgv0IvnuYGdh+flBYCTnXhEY8bnu2MR5p3Yw0sCoQ6h/nuYeBvdfX687Vv3GwfcAYEdsLTDKRbcJjHJRThbufgRM7hLU/vVeGIRKY0VgJDsqo98wIzBGoVQbHp++XhpdALArPmcHo/4Lf2qaCKh2E5aTLt79UJkyFQUrAmO8e5AcXxsY1ecnf/PgPqevJzAA2FVbC4wIhsHCPWthrRbmQWgIDAD4720nMNKFet1jjlT/+7MekbwxMNJzrw2MzR6RCAwAvosPD4zqUUcaBNWCmy6uF4suIo77i3Gy0Ffn7C/8y2v3dzhmBkbsjHT3O3FPUzGTHitfJ/FQ3kP/ewIDgO8le2A0/5ainYm/7ivdIt9MuwDXi3b3XhoMTWR004bCRjsYV8N7mFjsu+vU51wZHb3zrL1+RWAAsKsyBsZXMr3gAwB5CAwAIDuBAQBkJzAAgOy+aWAAAB9JYAAA2QkMACA7gQEAZCcwAIDsRoFxfXNfPDw+1a8AADYTHRE9EdrAeH55LatDZAAAm4p+iI6InghtYIQ4GOURHzDGGGOMmTvRD01chEFgAADkIDAAgMyK4i8CIp5eSNnsEgAAAABJRU5ErkJggg==" InformativeScreenshot="3a38ead8d20665b7ed76f5fd972ad24b.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='RoboShop | Home' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                                                      <uix:TargetAnchorable.Anchors>
+                                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                          <uix:Target DesignTimeRectangle="642, 477, 80, 24" ElementType="Text" FriendlyName="'Description'" FullSelectorArgument="&lt;webctrl aaname='Description' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Description' tag='LABEL' type='' class='' check:innerText='Description' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFQAAAAcCAYAAAD/YJjAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHfSURBVGhD7ZVLjsIwDIbnKixYcAkkFhykUiVughB3QeUywHEyebiJ7RjaTs1AJf9SBE0cP7447Y8zqcqAKsuAKsuAKsuAKsuAKsuAKsuAKsuAKmtBQB/uuNu4VXuF5xnqDm613rvjHZ4VRYHez2679klX4+AuYPI5LRZoHeh22kew29MDZhakCO//GmIU0Kg3nupb9bVA4crRLr26Br8admd3g5Uo/gph633n5wHX+dKm//HXz6eYLH7OFV4FzEdQv78MACtCZrVwDjketeO3dgLQUmhSctx08OgV1zM0vu4LbwvQVCwuyttjoMy3DDTY4XyhWARVhMfnwBeBE21QDjke2hdtKK9JQGNHQbL4fxbe/8rXQBx6ML1koBS6F4c1AihtlCIyL8ZjOXn9uUP7LqpH2Z9teLKhoApYkVygBFTIlc8PAk1+q4MJwnmK8WYBpYFD0eSKPFXaR8AaULjiCAJ/HhQu4uXBzQNa5TUI9Fk8Nq8HNG2qkoq2vEvLhyWsN3hNKoL4ZB+lUUCZDyknqSYOWdoXbdA+yc84oCFJOig0pMqeJ4DX2IF4Jahl4NfJ6A7taBwp1xIHcpC6dijfPt4koEuSWODnZUCVZUCVZUCVtVygXyoDqiwDqirnfgH62h1a1IruTQAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                                                        </scg:List>
+                                                      </uix:TargetAnchorable.Anchors>
+                                                    </uix:TargetAnchorable>
+                                                  </uix:NTypeInto.Target>
+                                                </uix:NTypeInto>
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Price'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="10860e84-5ea9-498c-ae5a-44863a827f45" Text="[price]" Version="V1">
+                                                  <uix:NTypeInto.Target>
+                                                    <uix:TargetAnchorable BrowserURL="http://localhost:3000/createProduct" DesignTimeRectangle="416, 619, 532, 38" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl name='price' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl name='price' tag='INPUT' type='' class='form-control' aaname='' /&gt;" Guid="966a69a7-7e9a-43a2-8327-839f01f8706d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAhgAAAAqCAYAAADxqSKfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI4SURBVHhe7dw9T9tQFIDh/uCujGVkY8vGxM7Cwk9AykCnTpUYAGVBQkwgtouPffNhh9DQnjQufR7pCF3bOCOv7Bu+FACAZAIDAEjXC4yn55dyfTMr33/8NMYYY4zZeqIfoiPmFoERB+OC+4fHegQAYDvRD9ER88hYBEaUh7gAAH5XdET0RFgERlQHAMCfmPeEwAAA0ggMACCdwAAA0gkMACCdwAAA0gkMACCdwAAA0gkMACCdwAAA0gkMACDdKALj8uRb+Xp0UW7rGgD4tyUGxlWZHDShMJjJtJ5+h8AAgM8lPTB6QTE93ToyAIDPY7eB0WifTpxc1RUA8D/YeWDcnh8vX3/cXZTDg+NyNo2f8QrltFw2h9+KkPb32mvqrJ5v77PhHACwd3/3CcY8DAb7LYaB0a5rfHSae/fu0UTKXbcsZVbOjkQGAIzJTgOjewqxEgM1MH4dIasB0RfXHp7P6qpq93qsBgkAsE/pgdF7rTH8o78hHnqBEbGw8Rsl9WnF2ufECAwAGIudPsFYkxQY734GALB34wuMLV6R2G8BAOM2vsBotOtNmzzf+t8azX0nw30ZAMDejDIwQhcZy+ndt0bGcuy/AIAxSQwMAICOwAAA0gkMACCdwAAA0gkMACCdwAAA0gkMACCdwAAA0gkMACDdWmBc38zK/cNjXQEAfEx0RPREWATG0/NLWx0iAwD4qOiH6IjoibAIjBAHozziAmOMMcaYbSf6YR4XoRcYAAAZBAYAkKyUV9zwkFMWw4J3AAAAAElFTkSuQmCC" InformativeScreenshot="5e7d6199a37253215fa7d9a0c2e2f563.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='RoboShop | Home' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                                                      <uix:TargetAnchorable.Anchors>
+                                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                          <uix:Target DesignTimeRectangle="665, 587, 34, 24" ElementType="Text" FriendlyName="'Price'" FullSelectorArgument="&lt;webctrl aaname='Price' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Price' tag='LABEL' type='' class='' check:innerText='Price' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACYAAAAcCAYAAAAN3M1lAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEMSURBVFhH7ZPLDYMwDEC7Sg89sAQSBwZBQmIThNgFwTLAOK7jOCUJX6uAOORJPpgE+8WBFzyUICYliEkJYlKCmJTTxJo8gndSQ8/5v3hiHWQfbOBF1vLyBreIOSJtcVjuTPbFEJpG3nF2D4fE+iqdrokmWEDDkzTPl+TpPbXHhL0+1BCvrSHyiRkhr5AvRrk6AOdU26yTVArloFOAEcrEfX9XTJ/aKkJidlGNIzZr7KL2xtXIGWNugtNFsd94KexTI14Bw2yqq38oT2fWR8WO2OYfeJLYZg/kGrEDV2l/T0tcI4ZQ7uzD2vZE/T54mMz67i4TU2i5KZy6LDeFW9MTew5BTEoQkxLEZAB8ARkCiLngFabZAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                                                        </scg:List>
+                                                      </uix:TargetAnchorable.Anchors>
+                                                    </uix:TargetAnchorable>
+                                                  </uix:NTypeInto.Target>
+                                                </uix:NTypeInto>
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Discount Percentge'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="10860e84-5ea9-498c-ae5a-44863a827f45" Text="[discount]" Version="V1">
+                                                  <uix:NTypeInto.Target>
+                                                    <uix:TargetAnchorable BrowserURL="http://localhost:3000/createProduct" DesignTimeRectangle="416, 321, 532, 38" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl name='discountPercentage' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl name='discountPercentage' tag='INPUT' type='' class='form-control' aaname='' /&gt;" Guid="619b980f-d2f2-4baf-a63f-98b17507e828" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAhgAAAAqCAYAAADxqSKfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAR2SURBVHhe7d09b9w2HAfgfuCuHesxWzZvmbxn8ZKPECCDO3UqkCEOvAQIMiXIpoqSqOPbyXcX2rHPzwNwsF5IkSrw/x3vgv4xAAB0JmAAAN1lAeP7j5/Dx093wz///qdpmqZpmnZwC/kh5IhoDRjhYLjgy9dvyxEAgMOE/BByRAwZa8AIyUO4AABOFXJEyBPBGjBC6gAA+BUxTwgYAEA3AgYA0J2AAQB0J2AAAN0JGABAdwIGANCdgAEAdCdgAADdCRgAQHcCBgDQ3W8KGHfD21d/D3++uVn+BgDOSceAcTNc/jWGhqq9Ht5+Xi5ZnXfAuL1+Xa/Dq3fD7XIeAM5d94Bx+WH5M/pwNRfYswgTe+ZYmAJGFiiWQPUcQsb0vq6G98ufAHCKhw8Ywed3w8UBhfnpOzVgjKY1aO3mPDECBgAdPE7AGL1/k+5izJ/oL67n/1d8MJ0f748t72fue3c+L9TVVxLZbsk8VvlcVQiIhXUJQ7Gv9b64E9M6V2gGjHJ9inFaz3xxfTPvfGRjba9Fvo6Nc+M4+XrtwkT5DtJz5Rqn7y7K7x/vbYSVsp99awjA8/ZoASMvunnAqAryWJjKQpwWtNvrq7VwzkUtLWLl1xHHBIz0vlgM07635xhVfQfpDka1m7E8cxHAqt+vHLIWaVCZ5rTrIwaA3f3luKNGKJjmnV6zPEe6DlPf6ZyXa9K+qnVp9APAeXi0gDEVrrW4zIUtFrqqMCa2ztWFepEdPyZglH2Vczo1YMz3xXmEOaUhYZIV9kbhH92/FmUwaKxz9lyjMlA0A0Yp73fve8j6CmtQX7M5JwCerSexgxE/ydYFvh0OVqGAlQVzkt7X7qMdMMrC+gsBY5rPru0Cxfw85fm5xfGL9ZkcsBbNPouAURbzct7NdQiWkNTod+97SPta33GjCRgAZ+fRAkb+qb1VQEdrkdzefVjtK2zZfe0+HjxgNJ8ruGdOk9b6nLoWO6cGjBiYdmMXz7dv7LSv5g4LAOfqcQJGVbRaBTTKz21uoe/bms+Ot8ea+v0tAeOeOU02nvnYtUicFjBaz1Icm+6px56DSezrsLUD4Dw8eMCYilpVfMoQsVHQlq31tMAd9CPPpJDmhW40FcTxmqMDRqvY1u4LGHH8bK3GeV6u/e4ZZ3MtlnkX46Zre1DAaASV8r64o7F7jsbYy7OmfdfvKn+XAJyP7gFj/oojac1P3HkBnQvPru0rrOs1VRFNzo2tuj8WwHjN+ExVCDgoYIxiOCmPJ+4NGEHSz9zSsfcEjGBzLYp5ji3t46CAMdqtZzyev9v4z2fz5yvGDs+12ffSmv99APDcdQwYUGiGNgBeAgGDB9PcMQHgRRAw6CB8PZLvVMy/09j+0SkA50vAoIvqtxXCBcCLJmAAAN0JGABAdwIGANCdgAEAdCdgAADdVQHj46e74cvXb8tfAADHCTki5IlgDRjff/ycUoeQAQAcK+SHkCNCngjWgBGEgyF5hAs0TdM0TdMObSE/xHARZAEDAKAHAQMA6GwY/gd0hWxVEWy8dwAAAABJRU5ErkJggg==" InformativeScreenshot="1df4f20bfb6fbe787847a9c417c4be86.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='RoboShop | Home' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                                                      <uix:TargetAnchorable.Anchors>
+                                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                          <uix:Target DesignTimeRectangle="614, 289, 137, 24" ElementType="Text" FriendlyName="'Discount Percentge'" FullSelectorArgument="&lt;webctrl aaname='Discount Percentge' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Discount Percentge' tag='LABEL' type='' class='' check:innerText='Discount Percentge' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAI0AAAAcCAYAAABcZDxDAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALfSURBVGhD7ZZLbuswDEW7lQ46eJsI0EEXEiBAdlIE3UuRbCbtclSJomT+bEtKX3/mATSIZVHk5ZWcu+A4nbhpnG7cNE43bhqnGzeN042bxunGTeN046ZxunHTON2Mm+Z8DPcPT+H5DX87m4GZ5np6ikb4p8fhgm8Q/rRpLmFv6LA/4/TG0aZ5fAlX/J15D8+PSbS/YRC7Rkk2DTMJHJLfYZy2GsdpME3m9RCN8x8T+SqGTRMBDaxb94fxY0wT3l7Cjt42cPKO4RV/TjdSGeJmwpNaB9tHfg7krZbm9U3Hm5j3353e83O1j8yPzkls00h94DeJp2+mqE+pm+61pAXoTOaYSW+sUcTenS413oToBV2PtJtGCilMI0/h9XSsTc7i0qbH4g64DxbCEkdRpya0m0av47GXayzYpqH7qThYB9eHa5JY10LMpZo+o0aZX6QYb1qr64Z3RKwO0+SEuSjFNHmOO7ZgN6AgzVbgz1OMRtNYTSI1LddY0DnzZjfkA/rId9a1UBoaOo/UaOvM+wbr5DvKyJ9409STRZ8lYFPxrCKMSEnxai7tppGitwiqybXmesogNeCp5fM4mGn6tTBj1jWjNc7pzOOBnub+o6aRBVuiRCAGbIRzv9g0czfCck3IoGlm9wRGa5yLzeOZN51Bo2mMZGdMk6GiLzfAvjblcytGzulbTLM6HzH1GdNiYrRGqVUh51PitWnTYho4HcaGTJSYVPkzB3BxIC67Kcj7GF8bkt8sIKgUhuXVJuiy2QvrpoB8RBz6539un0UtYI3YN+qzrzXdUKMRO9dA4lm9SFqI3mvTxEV86M8CwBLLxdB1UnAZmyVWjFmH1dTcSLqen8xGQWmu8oBU1k2TKKLXQcWdMU1iUQts7jRojBtrFLH3ZyOe6oXuPzONszVsE67hptkycKvMfEkWcNNshfhp4jcKfu7lf9UG3DRbQf1XGTNMwk3jdOOmcbpx0zidhPABMLJdCIHiA4gAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                                                        </scg:List>
+                                                      </uix:TargetAnchorable.Anchors>
+                                                    </uix:TargetAnchorable>
+                                                  </uix:NTypeInto.Target>
+                                                </uix:NTypeInto>
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Rating'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="10860e84-5ea9-498c-ae5a-44863a827f45" Text="[rating]" Version="V1">
+                                                  <uix:NTypeInto.Target>
+                                                    <uix:TargetAnchorable BrowserURL="http://localhost:3000/createProduct" DesignTimeRectangle="416, 431, 532, 38" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl name='rating' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl name='rating' tag='INPUT' type='' class='form-control' aaname='' /&gt;" Guid="0c358312-0d0d-43d1-9e9e-87fece2b5d8d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAhgAAAAqCAYAAADxqSKfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKeSURBVHhe7d0tTyNRFIDh/cHYlSBxOBwKj8HwE0gQrFq1CQIIhoSgILi7c+aLuZ2StOVelnafJzlipsO0rm/ONOFHAgAoTGAAAMVlgfHy+pZubh/Sr99/jDHGGGNWnuiH6IjBGBhxMi54fHruzwAArCb6ITpiiIwxMKI8xAUAsKnoiOiJMAZGVAcAwGcMPSEwAIBiBAYAUJzAAACKExgAQHECAwAoTmAAAMUJDACgOIEBABQnMACA4gQGAFDcdgTG/UU6+Lmfjq/6YwDgWysYGNfpuImAvYU5OO/+2cmnCAwA2CrFAyOLgD4M1ouMJfcBALZK3cBo3J0fpb2T6/5oFQIDALZd9cC4PNlfCIzuuvfHKKfpsn8lXZ1OznfT3q/dhByls/vusvfj/F7zTcnCezWfY/55AIDS6gZGGwyTMGjcnZ9mx+0X/uFFuuuPl95naWBENCzGyfS9uvtMo6PdpvShAQDUUzwwxm3Bql/kbRhMQmGNwMi3JQ/p7PA9KNqYyMKlY4MBAPXV22D0jzvyCOiMm4RxNgmMfDOyGBgREst+XCowAKC+eoHRmG8R+i3H9NzGGwyBAQDfVdXAGM6NX/SzmGhUDIz5I5LuGoEBAHVVDoxGGxB9DMzCoPubPDDyUGhtEBjdNfl9/MgTAL5G/cAYtgb9NiH//UUTFh9uNbpr2vttEhihj4zhXvGaRyQAUF/BwNgOAgMA6vvPAuOjLQsAUNLuBkY8Hsk2FfmjGgCgnh3eYAw/IJ2MuACAL7HDgQEA/CsCAwAoTmAAAMUJDACgOIEBABQ3C4yb24f0+PTcHwEArCc6InoijIHx8vrWVofIAADWFf0QHRE9EcbACHEyyiMuMMYYY4xZdaIfhrgIWWAAAJQgMACAwlL6C3Q5MJ78/tJAAAAAAElFTkSuQmCC" InformativeScreenshot="29e6e120980e0947df969a8ae0ace654.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='RoboShop | Home' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                                                      <uix:TargetAnchorable.Anchors>
+                                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                          <uix:Target DesignTimeRectangle="660, 399, 45, 24" ElementType="Text" FriendlyName="'Rating'" FullSelectorArgument="&lt;webctrl aaname='Rating' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Rating' tag='LABEL' type='' class='' check:innerText='Rating' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADEAAAAcCAYAAADIrlf0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFPSURBVFhH7ZRNCoQwDIXnKrNwMZcQXHgQQfAmIt5F9DLqcTL9idrUQK2M0pE+cBFbm/clqS94gCJEKIoQoShChKIIEYpugpihzj7wLgeMfysC0ZUiUWI9WQsjrp/X3RAkESb3AtHfpM2M8fVyQAhNLaRJBR2GboUI0VdirCiEPXZFjwsKmK5pGBtsi8lZTMdpLuGD8eOAGKBYjaCE0cKM1aE51BPGbCd4CGlsLQCTS/kxwdYiuSDUpuU5MkY6+WbGA8Lq+tjkm2ll2CwOyq8T2txuvKSYsTkDQfdYENIs90PxHiemGrpb5rvznbgHQki9Ww+zDUtdCMGMk9rjC7GY1An3yXVnKNj+nBMQuId04/DFZu6ApseqWPeh6JnuGHt4+CMQUgiCZ6k11zj9hZ4AwU1LwBBylGjFyVgbCroTy09je/YAUv93JxhFiDAE8AUpEb7mByH95QAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                                                        </scg:List>
+                                                      </uix:TargetAnchorable.Anchors>
+                                                    </uix:TargetAnchorable>
+                                                  </uix:NTypeInto.Target>
+                                                </uix:NTypeInto>
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Stock'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_7" ScopeIdentifier="10860e84-5ea9-498c-ae5a-44863a827f45" Text="[stock]" Version="V1">
+                                                  <uix:NTypeInto.Target>
+                                                    <uix:TargetAnchorable BrowserURL="http://localhost:3000/createProduct" DesignTimeRectangle="416, 405, 532, 38" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl name='stock' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl name='stock' tag='INPUT' type='' class='form-control' aaname='' /&gt;" Guid="0d0bd9e6-2187-489d-8516-11985eab72ee" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAhgAAAAqCAYAAADxqSKfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKESURBVHhe7d2xTttQFIDhPnBXxjCysbExsbOw8AhIDHTqVIkBEAsSYgKx3XIcX8d2HBra45Kq3ycdCTtOxJZf917ElwIAkExgAADpBoHx/PJarm/uy7fvP4wxxhhjtp7oh+iIqguMuBkPPDw+tXcAALYT/RAdUSOjC4woD3EBAPyu6IjoidAFRlQHAMCfqD0hMACANAIDAEgnMACAdAIDAEgnMACAdAIDAEgnMACAdAIDAEgnMACAdAIDAEj37wfG3XnZ3zssp3ftNQDw6ZID46oc7S3K1/4cX7WvzURgAMDOyQuM5ot+UY4u2+vGW3B0gXFfTg8WZf9s+d/V0ggMANg5aYFxe3b4i9UKgQEA/4vcwNg7KRft9UC7utHfOumHxvK9vdcnQ2W8/dJGxVpg1Oc2/C4AwOzSAqOuUHRf/GumVzAujscx0H7OwXm5be/UQBlGyclEYLTvnfvcBwDwrsTAWFqtRoxDYyIwNm1vjO43EbIpGrpnJ8IEAPgU6YFR1dBYBcVEYFyebAiC5bPLA6P9nye0gbEvLgBgZ8wWGI0IiG77Y87AePvcg3fOgAAAf9W8gTHY6pgIjNFWSGd0f7stkqnzHADAZ0gLjO7QZU/zhd9boZgKhfUoWIbI4Lm6StGLk+lDniIDAHZBYmCM/tQ0Zrzq0IbC8GxGjYLVDFY5qt57m6nhMgqMLlDentm4rQIAzCotMAAAKoEBAKQTGABAOoEBAKQTGABAOoEBAKQTGABAOoEBAKQTGABAurXAuL65Lw+PT+0VAMDHREdET4QuMJ5fXpvqEBkAwEdFP0RHRE+ELjBC3IzyiAeMMcYYY7ad6IcaF2EQGAAAGQQGAJCslJ89UnNKrpj0SAAAAABJRU5ErkJggg==" InformativeScreenshot="81e9b0745e21ce76add076a62f371688.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='RoboShop | Home' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                                                      <uix:TargetAnchorable.Anchors>
+                                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                          <uix:Target DesignTimeRectangle="663, 373, 38, 24" ElementType="Text" FriendlyName="'Stock'" FullSelectorArgument="&lt;webctrl aaname='Stock' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Stock' tag='LABEL' type='' class='' check:innerText='Stock' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACoAAAAcCAYAAAAX4C3rAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFASURBVFhH7ZRRCoMwDIZ3lT344CUEHzzIYOBNRHaX4S6z7TiZtklN4+/coAMH/aCwahu/pOkO9Cdk0dRk0dRk0dRk0dTsQ/RxoapoqHvwHABEb3QqSjrqcb7xux/xtajbUNJp4LljFA+iT+rqkqr+yfNEfCt675uN6u1JtGjpyvMIrrZuCS3s96r3MGHbViy3EJV1s4vpUV+xEGABruj1HAcNceoL3fmJJBon1wJR3msSBZdJV8cKA9G1YzPPXTJrbRXWggQZKCqI8CwGRIcWBpa1/mLq3wAWrVYkJ96KOiaRcKy/FB3j1ut3ZFs0OkIgao44YJ5/dvSo3z2RaGhuhduoKoY+uAzuE4rWSdVUkvgyYVkjav5ipmGrwB+Me1eCzyOquqD2uiEFMKIh0XGNtMv20e+ELJqaLJqaLJoWoheEVRnNqNxHsAAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                                                        </scg:List>
+                                                      </uix:TargetAnchorable.Anchors>
+                                                    </uix:TargetAnchorable>
+                                                  </uix:NTypeInto.Target>
+                                                </uix:NTypeInto>
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Brand'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_8" ScopeIdentifier="10860e84-5ea9-498c-ae5a-44863a827f45" Text="[brand]" Version="V1">
+                                                  <uix:NTypeInto.Target>
+                                                    <uix:TargetAnchorable BrowserURL="http://localhost:3000/createProduct" DesignTimeRectangle="416, 379, 532, 38" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl name='brand' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl name='brand' tag='INPUT' type='' class='form-control' aaname='' /&gt;" Guid="e9389e1e-86e1-4240-a80c-2fc3db6b0d6a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAhgAAAAqCAYAAADxqSKfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ0SURBVHhe7dyxTttQFIDhPnDXjjCysWVjYmdh4RGQMqRTp0oMgFiQEBOI7TbH9g22k6iBnsRt9X3SEbJznay/7rX4UgAAkgkMACDdIDBeXt/Kze1D+f7jpzHGGGPMzhP9EB1RrQIjbsaCx6fn7g4AwG6iH6IjamSsAiPKQ1wAAJ8VHRE9EVaBEdUBAPAnak8IDAAgjcAAANIJDAAgncAAANIJDAAgncAAANIJDAAgncAAANIJDAAgncAAANL954HxUC5OjsrxZfv/0AGAw0gMjEWZfTsqXwdzWi7uu48nITAAYArpgTGbd5dLd5eny8g4L9fd9eEJDACYwl4Do7035S6GwACAKew3MO6vynE/MOr1PP7GEcr77sb12fB4ZfA98/N2bfP8ljVh9Pnx5UJgAMAE9hgYG3YPagCcXJW77lZjeX/WX9cERS9Mmuvhc2vHL91396OjRovAAIDDSg+MunvQzuj9iw0RsNkoVsbB0RiuaWLibNFerDgiAYAp7HEHY2kcFM31lncyurX9QBkGxvhl0f7vtSEx+O2GwACAKew3MJYGOwtbAqM9yujf37SDITAA4F/xFwTGpuc+FxjrRyTtGoEBAIe138DY6YhkfZehvpy5e2AsNWuGv1+/R2AAwGGlB0Z9f6KdUUxsOSKpIVKfm803xcNvAiN0kfH+PY5IAGAKiYEBANASGABAOoEBAKQTGABAOoEBAKQTGABAOoEBAKQTGABAOoEBAKRbC4yb24fy+PTcXQEAfEx0RPREWAXGy+tbUx0iAwD4qOiH6IjoibAKjBA3ozxigTHGGGPMrhP9UOMiDAIDACCDwAAAkpXyCxI7VLifxJETAAAAAElFTkSuQmCC" InformativeScreenshot="c426ff061944378cad9345d6b17f3208.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='RoboShop | Home' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                                                      <uix:TargetAnchorable.Anchors>
+                                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                          <uix:Target DesignTimeRectangle="662, 347, 41, 24" ElementType="Text" FriendlyName="'Brand'" FullSelectorArgument="&lt;webctrl aaname='Brand' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Brand' tag='LABEL' type='' class='' check:innerText='Brand' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAC0AAAAcCAYAAAD1PDaSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEZSURBVFhH7ZNRCoMwDIZ3lT3sYZcQfPAgguBNRLyL6GXU42RtbLCJZa6FVYX+UCRtkn7G3wfcUAk6lhJ0LCXoWErQsXR96KGG56uG3oRaDLqv3iqBr6xdzOlJ+gm6Gk2kNHeQKfByMPEZ8oZW0nunTtsfeoEm59CUg0/LPlNbYOy21daH6nDlHUwmg8TONawvNIKIxtSUW2aE8qutVmhep2pUvBuIfZ/pcwyNSduSft41dkp+IQMtrMeGgoAFNDMebQq1h723zyGtk7NfWEJzywhoDecaRsiPKItcOeRnaYcLQ7uAAqEd9lgH8gd7yD2avBc03WVPO/RHlBe5oKWfs3b0nzTKgFMvfXZkj7soQcdSgo6lBB1HAB9N1DkBfiSwHwAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                                                        </scg:List>
+                                                      </uix:TargetAnchorable.Anchors>
+                                                    </uix:TargetAnchorable>
+                                                  </uix:NTypeInto.Target>
+                                                </uix:NTypeInto>
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Category'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_9" ScopeIdentifier="10860e84-5ea9-498c-ae5a-44863a827f45" Text="[category]" Version="V1">
+                                                  <uix:NTypeInto.Target>
+                                                    <uix:TargetAnchorable BrowserURL="http://localhost:3000/createProduct" DesignTimeRectangle="416, 489, 532, 38" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl name='category' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl name='category' tag='INPUT' type='' class='form-control' aaname='' /&gt;" Guid="54005454-b07a-4ebe-a247-80614c71849a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAhgAAAAqCAYAAADxqSKfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANCSURBVHhe7d09T9tQFIDh/mBWxmZkY8vGxM6ShZ+AlIGqQ6dKDIBYkBATiM3N8Vfsa5sEuCCaPI90JOLYTjL57bWl/igAADITGABAdr3AeHp+Ka6u74pff/4aY4wxxmw90Q/REY02MGJj7HD/8FhvAQDYTvRDdEQTGW1gRHmICwDgvaIjoidCGxhRHQAAH9H0hMAAALIRGABAdgIDAMhOYAAA2QkMACA7gQEAZCcwAIDsBAYAkJ3AAACyExgAQHYCAwDI7lMC42ZxXBwc/uzNbFH9pycAwO7LHBiXxTyC4uSyfl27PS9m6bZJd8XZkSABgP9ZxsDIFQYCAwD+d/kCY3laHByeFhf1y9dcnPRvn8yX9Rux0tHZHtMNjfTWS3tcIzl+trgcjZXBLZxkdaX8fqttzfecLX5PRE+1YjP4HgCw57IFRnNR3mgVAfPuhboMk+Pi7LZ+PbGCUUbB0XlxU79uYiKNk+7Ffh0I63NV27ohVH1e99zNcd1zDT4/vCGqAGCfZA2M4b/wt5GuAowFRuzTjZBKN2q6f68l5yojZHiedHt5rjQmRr7D+38zAOy2r1/BCPVqQ3uLYlNgjOzfTvmZ1THdFYdKcq5YcRiEQ+gfP/Vb+kExHj0AQMbAGL2FMKK8ePcuzFusYJSB8dqtiK8JjN7x8fe2QQUAeyZbYDSrDMOLfFcaE2GLwBg9rqs6ZnjBr45rz5XcCmkl26dXY+Jzqv1in9d/KwDsr3yBEcqHHtM4WIkLeHnBHsZDtaLRv1iPXeCr/fqrGDeL03Us1J89OE/yfYbnGcbJ2Oc3YqVmtjhfhYuHOwFgSt7AKFWrBuXzEe10Vg3qlY7mvflyZHWis89YjLSTRkAdGc3Ml2OrIcPzjL4/ERjNd0uPAQDWPiEwvpPxwPiQ5HYKADC024HxCTGw7cOsALDPdicwlqfJSkV9q2bqVse7bHrYFAAIuxMYybMd5WSMi+a5Dc9eAMBmuxMYAMC3ITAAgOwEBgCQncAAALITGABAdoPAuLq+K+4fHutXAABvEx0RPRHawHh6fimrQ2QAAG8V/RAdET0R2sAIsTHKI3YwxhhjjNl2oh+auAi9wAAAyEFgAACZFcU/a7PvU1+hzPUAAAAASUVORK5CYII=" InformativeScreenshot="062d16db69e169d65abea9efc37c251d.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='RoboShop | Home' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                                                      <uix:TargetAnchorable.Anchors>
+                                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                          <uix:Target DesignTimeRectangle="651, 457, 64, 24" ElementType="Text" FriendlyName="'Category'" FullSelectorArgument="&lt;webctrl aaname='Category' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Category' tag='LABEL' type='' class='' check:innerText='Category' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEQAAAAcCAYAAADYzhkoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHxSURBVFhH7ZVNbsIwEIV7lS666CUiseAgkZA4QDc9AYq4C4LLBI7j+mccPG9ekhYQSpGfZLWxPeOZzzPmzVUpVSCgCgRUgYAqEFAFAqpAQBUIqAIBVSAgCqTv1u7941ONprvI6msLgJxcGwBsTvItOu9dg3Ojurjd6v8CLIA8KpFXAXLc+tbYuoN8Tglbakg+VFIxr9a80K49ykIW2DfdicI1LY3Vm3OJf/366tt90UtKHVHGMQA5bIhjKu+k3CdJXJ3yColJrPaul29jZ/xITH6u9JXmyotL5ynfGUQRpzk/iBSBAmIJ/kYIgAEJN7F2u7N8ispL4BcCviI068fMx0Rxn42B5XxDhQTJ41uMSSBy++X+YcQzk41pIfQVEsVbjgJ7cvNBGgC/pAEILSmi3L/jLTIGZOp9eg4QZR/+JwVwfVRJD1uRZM0c25Mqatx3srEBJrvB159ahl1AOCftC9XC4rkCCYqOMBmvcKAEi62VK6a0Ye0X5yDIvttCEjrIZEN8Kz8E5iiQFG/T7T1ovq6BRNn3QT9Qep3+NEq1pXVMphhYEQIlj/bIqs36wfUpIDk2YyMiQJYkDuQujbWdaNlAZoK/RXM/HssB4stcV4K0JrbVXZp73JcEpHh3hvFAGOyBZlr4G/J8VSCgCkTJuR+0O6HNN07NiwAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                                                        </scg:List>
+                                                      </uix:TargetAnchorable.Anchors>
+                                                    </uix:TargetAnchorable>
+                                                  </uix:NTypeInto.Target>
+                                                </uix:NTypeInto>
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Thumbnail'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_10" ScopeIdentifier="10860e84-5ea9-498c-ae5a-44863a827f45" Text="[thumbnail]" Version="V1">
+                                                  <uix:NTypeInto.Target>
+                                                    <uix:TargetAnchorable BrowserURL="http://localhost:3000/createProduct" DesignTimeRectangle="416, 395, 532, 38" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl name='thumbnail' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl name='thumbnail' tag='INPUT' type='' class='form-control' aaname='' /&gt;" Guid="0b0d2977-970b-431f-9b4b-1a5072634216" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAhgAAAAqCAYAAADxqSKfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKlSURBVHhe7dw/T9tAGMDhfuCujDCysWVjYmdh4SMgMaRTp0oMgFiQEBOI7fDrf/E5KSTt4Ub180jvYOtyTib/5AS+JQCAwgQGAFBcFhgvr2/p5vYh/fj5yxhjjDFm64l+iI7o9IERJ2PB49NzewYAYDvRD9ERXWT0gRHlIS4AgD8VHRE9EfrAiOoAAPgbXU8IDACgGIEBABQnMACA4gQGAFCcwAAAihMYAEBxAgMAKE5gAADFCQwAoDiBAQAUN2FgPKTz48N0dNH8b/LpTXj967P0/eAknd8Pj8/SVXsIAP+7MoFxf5mODg6rm+hv5nRZLRIYAgOAufiCJxjLtKiiYnHdHvZmFBhjAgOAmREYUxAYAMzMPwmMq9PB1yfHl+muXdGtGb/27uIkW1e//nSZ7dOEQ/P6/Fxndf16v3bN+Mbf7f3RmpB9hmqy9zwOCoEBwMxMHhj5zbhZuwqBHQJjuE99A990bvA7iMH1h+HR7LW6+Xd7j99T8zuS1v1lWgzjZXwtgQHAzE0fGMMbdSWPhx0CI9tn097NuQ9DoZa/33rv7KlK5dNAGH1mgQHAzE0eGMOnB6FkYOR7bw6M8fXH59f3rmwKhA1/OSMwAKAhMEbntwmMek329YsnGAAwtJeBMV5T39C/KjDqJxGrWPg8MDZ9PoEBAEN7Fhjt8drNuVxgZF9ldOc+3LuSBcL6terXCAwA6O1dYAxDoJ7qZl/2K5Jlvn927W0CozL6/cXi2hMMABj6gsAAAOZOYAAAxQkMAKA4gQEAFCcwAIDiBAYAUJzAAACKExgAQHECAwAobi0wbm4f0uPTc3sEALCb6IjoidAHxsvrW10dIgMA2FX0Q3RE9EToAyPEySiPWGCMMcYYs+1EP3RxEbLAAAAoQWAAAIWl9A7awLXXHD+HZAAAAABJRU5ErkJggg==" InformativeScreenshot="bcbae80a18dab56cc90e6bbd27ac9fda.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='RoboShop | Home' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                                                      <uix:TargetAnchorable.Anchors>
+                                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                          <uix:Target DesignTimeRectangle="645, 363, 75, 24" ElementType="Text" FriendlyName="'Thumbnail'" FullSelectorArgument="&lt;webctrl aaname='Thumbnail' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Thumbnail' tag='LABEL' type='' class='' check:innerText='Thumbnail' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAE8AAAAcCAYAAAAgLuLfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGGSURBVGhD7ZVRzsIgDIC9ig97+C9h4oMHMTHZTcziXcx2mbnj9AcKo2VMN4tmif2SxTCgpR8Md6C8jcoToPIEqDwBKk+AyhOg8gSoPAEqT8A6eY8bHKoTXB++/W2+mP9++YP98QY9bV8630KivLaGfWUGzDyHZlB5s/Ioc4v8IXkpKk9AQXkdnNNPOmA/f3LcERx/bn0TBrge7bzO/YY42M9jxzmGMT/OD2N4USH2gAWHMTNrGvurGu6+x5LKKiQvSeTuSjJ2hTw6r29Ovoj0Hck15qdr8xLGwqLYmA/H0E3um5rV5+Q8ueOKyWOngey0Y9XJIyc2U+BkXja/wW1gkOzlJYW6jZisi8BifExe+r6sPC4mJ+/VunKx8/LiaQ+PylsgD+OydW7m5NF7yuLmfU4eF7NAXm6Nm5DnC45t7OcXuESejUUK9+/SfE/lTerAPBuQZ3C7iMLwnzEVI5Fn4rUoLOTgcRbIC+0xhpFW7OQpi1B5AlSeAJUnQOUJUHkCVN7bAPwDNygUFP+1sSQAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                                                        </scg:List>
+                                                      </uix:TargetAnchorable.Anchors>
+                                                    </uix:TargetAnchorable>
+                                                  </uix:NTypeInto.Target>
+                                                </uix:NTypeInto>
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Images'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_11" ScopeIdentifier="10860e84-5ea9-498c-ae5a-44863a827f45" Text="[image]" Version="V1">
+                                                  <uix:NTypeInto.Target>
+                                                    <uix:TargetAnchorable BrowserURL="http://localhost:3000/createProduct" DesignTimeRectangle="416, 505, 532, 38" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl name='images' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl name='images' tag='INPUT' type='' class='form-control' aaname='' /&gt;" Guid="c9620b23-4963-489d-a050-d80335f6e47c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAhgAAAAqCAYAAADxqSKfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKbSURBVHhe7d0rT2NRFIDR+cFYJEgcDoeqx9TwE0gQHTVqEgQQDAlBQXBnunsfvS9Igc20zKyV7JD7OpV8Obcz/CgAAMkEBgCQrhcYT88v5er6rvz89dsYY4wxZuOJfoiOaLSBESfjhvuHx/oMAMBmoh+iI5rIaAMjykNcAAAfFR0RPRHawIjqAAD4jKYnBAYAkEZgAADpBAYAkE5gAADpBAYAkE5gAADpBAYAkE5gAADpBAYAkE5gAADpBAYAkC4xMBblZP+gnFzWhwDAf0tgAADpBAYAkO4LA+OunB0dlMP5YvVzb3ktprpe3ds/t3YzP26vxRzOq78pv9Z/fu90US5Oq59dw3WGn7N65o3rAMDHfHlg7O0fl7Pb6sz6F/7w3KxcVIdLy3W6oXB7Xg5761af042Odt3Oc6tzR+flpj4erjO6fjkTGACQ5C/sYHR3H8ZxMH5uqL/OKAxq/R2MWHMdMY3uPVM7HgBAjq0ERj8mXj/XfX3RrBNh0F+z0guGerei+3w7o3vGIQIAfM7OBUbzuuO1dTYPjO5rlzdczur4EBoAkGXHAmPqmXFgjF+RVPesX3lMfc5bpj4XAPiondvB6O1ELDU7Gu069auN7rrNPd3nVusMdjFu5rN2l+LitHtNYABApp0LjOa4em0Rz1f/zLW3zuA7FnFtGCahiozOjAJkPeICAPIkBsZ2TQUGALAd/0hgTO2MAADb8v0CI16P9HYq6i94TvzfGADAdnzDHYz+dzRWIy4AYKd8w8AAAHadwAAA0gkMACCdwAAA0gkMACDdKDCuru/K/cNjfQQA8D7REdEToQ2Mp+eXVXWIDADgvaIfoiOiJ0IbGCFORnnEDcYYY4wxm070QxMXoRcYAAAZBAYAkKyUP8O+J0IwfvZfAAAAAElFTkSuQmCC" InformativeScreenshot="870ec3b3ae8166e4da0a536fc2ce2771.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='RoboShop | Home' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                                                      <uix:TargetAnchorable.Anchors>
+                                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                          <uix:Target DesignTimeRectangle="657, 473, 51, 24" ElementType="Text" FriendlyName="'Images'" FullSelectorArgument="&lt;webctrl aaname='Images' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Images' tag='LABEL' type='' class='' check:innerText='Images' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADcAAAAcCAYAAADFsCezAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFxSURBVFhH7ZTRjcIwDIZvFR7ugSWQeGCQSpXYpELsUrXLFMYxSey0tmMQBaqSu/xSVDV2HX+20x/4wypwuarA5aoCl6sKXK76P3DD6QCb/RkGes9dBS5XPYbrjrD5PUIbnltcZA++ao+rrclGq+rIEHU5w47Zd6cemr1/XskBJeMcoLmQwUvF0Hk8Aec+qnva6KGKgdSeSModWvH3EIclRklx4AjB44S98RwnEQfPnWJcoalnw7nO0asXdszYM7o3SSaSJB3kkuOdCwWQ5wifYFedVHoNToGYcHpkRjhMMBlTDRenxljRZxzZpFCoReDwUF5V3rkZcLpgpvA7C3IBOH0XvFK4tNroI8fy8dgJGbkuAKc64BTHZwQOcWUBos/0HRVBndXWlI+DT39ai8M5qftWdUY3CXDySYsiRo6W7Cy3yTy9BNy6suDe0/fAzb1jT2gdODeSskM4tvd+6a9qHbjkvnwezOuL7tznVeDyFMANb05Ne3Pfa4IAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                                                        </scg:List>
+                                                      </uix:TargetAnchorable.Anchors>
+                                                    </uix:TargetAnchorable>
+                                                  </uix:NTypeInto.Target>
+                                                </uix:NTypeInto>
+                                                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                                  <ui:Click.CursorPosition>
+                                                    <ui:CursorPosition Position="Center">
+                                                      <ui:CursorPosition.OffsetX>
+                                                        <InArgument x:TypeArguments="x:Int32" />
+                                                      </ui:CursorPosition.OffsetX>
+                                                      <ui:CursorPosition.OffsetY>
+                                                        <InArgument x:TypeArguments="x:Int32" />
+                                                      </ui:CursorPosition.OffsetY>
+                                                    </ui:CursorPosition>
+                                                  </ui:Click.CursorPosition>
+                                                  <ui:Click.Target>
+                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a84529ff-a08e-43e4-8bef-059d98113d0d" InformativeScreenshot="6638388eee6a4060c3942568ec37da5c" Selector="&lt;webctrl aaname=' Add Product ' tag='BUTTON' /&gt;">
+                                                      <ui:Target.TimeoutMS>
+                                                        <InArgument x:TypeArguments="x:Int32" />
+                                                      </ui:Target.TimeoutMS>
+                                                      <ui:Target.WaitForReady>
+                                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                      </ui:Target.WaitForReady>
+                                                    </ui:Target>
+                                                  </ui:Click.Target>
+                                                </ui:Click>
+                                              </Sequence>
+                                            </Sequence>
+                                          </ActivityAction>
+                                        </uix:NApplicationCard.Body>
+                                        <uix:NApplicationCard.TargetApp>
+                                          <uix:TargetApp Area="-8, -8, 1382, 745" BrowserType="Firefox" IconBase64="AAABAAMAEBAAAAEAIABoBAAANgAAACAgAAABACAAKBEAAJ4EAAAwMAAAAQAgAGgmAADGFQAAKAAAABAAAAAgAAAAAQAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH4AAAD5AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA+QAAAH4AAAD5AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD5AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP9NTU3/AAAA/wAAAP8AAAD/AAAA/1JSUv9VVVX/AAAA/xQUFP8xMTH/AAAA/yMjI/8RERH/ERER/ywsLP8YGBj/sbGx/yQkJP8zMzP/JiYm/yMjI/9ycnL/ycnJ/0RERP+5ubn/jo6O/4SEhP+4uLj/bW1t/66urv+zs7P/xsbG/9jY2P9XV1f/tbW1/7a2tv/Kysr/uLi4/5+fn/+goKD/WFhY/3d3d/+IiIj/wcHB/5+fn/9wcHD/s7Oz/7Gxsf9ycnL/oKCg/8PDw/9hYWH/xcXF/5eXl/9QUFD/jo6O/xsbG/+xsbH/YWFh/319ff9XV1f/BgYG/xAQEP8eHh7/BgYG/yIiIv8YGBj/AwMD/yoqKv8YGBj/BgYG/xwcHP8CAgL/cXFx/z09Pf8VFRX/LS0t/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA+QAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA+QAAAH4AAAD5AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA+QAAAH4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKAAAACAAAABAAAAAAQAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAB8AAAA5gAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA5gAAAHwAAAACAAAAfAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAHwAAADmAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA5gAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wUFBf8NDQ3/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/Ghoa/xUVFf8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/jY2N/5WVlf8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/25ubv/BwcH/39/f/19fX/8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP+fn5//vr6+/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/g4OD/87Ozv/Hx8f/3t7e/wgICP8AAAD/AQEB/1FRUf96enr/TExM/wICAv8AAAD/V1dX/zQ0NP8AAAD/Q0ND/0RERP8AAAD/NjY2/3p6ev9dXV3/BAQE/4KCgv/l5eX/ERER/39/f/+EhIT/SEhI/yQkJP92dnb/cnJy/xwcHP8JCQn/bm5u/5CQkP/u7u7/3d3d/y0tLf9vb2///////9nZ2f/6+vr/vLy8/wUFBf/CwsL/r6+v/wAAAP/c3Nz/4ODg/729vf/7+/v/wMDA/7a2tv/FxcX/xcXF//7+/v9AQED/0NDQ/9PT0/+0tLT/+fn5/83Nzf+zs7P/1tbW/4SEhP/8/Pz/wMDA//j4+P+ysrL/0tLS/6Wlpf/R0dH/AAAA/2ZmZv//////UFBQ/7y8vP+zs7P/AAAA/9fX1/+FhYX/lZWV//////8SEhL/tbW1/+jo6P+fn5///////0ZGRv8ICAj/4ODg/29vb/+3t7f/XFxc/+/v7/+xsbH/ampq//b29v8DAwP/w8PD/8fHx/82Njb/U1NT/+Tk5P8AAAD/f39///////9QUFD/o6Oj//b29v8eHh7/paWl/76+vv9DQ0P//////z09Pf/FxcX/xcXF/2ZmZv/Y2Nj/u7u7/wICAv+oqKj/yMjI/wAAAP/Pz8//29vb/6mpqf8xMTH//////zQ0NP96enr//Pz8/w4ODv8AAAD/KSkp/2JiYv/8/Pz/ycnJ/wcHB/9zc3P/9/f3/9LS0v/m5ub/v7+//wEBAf+pqan/5+fn/5OTk/+pqan/DAwM/39/f//5+fn/zMzM//Pz8/+qqqr/AAAA/7e3t/+np6f/6+vr/ywsLP//////YWFh/zIyMv//////MTEx/wAAAP8mJib/+/v7/8zMzP+MjIz/AQEB/ysrK///////VFRU/1hYWP8YGBj/AAAA/wEBAf9AQED/XV1d/x0dHf8AAAD/GBgY/1xcXP8tLS3/U1NT/wwMDP8AAAD/DAwM/19fX/9LS0v/AAAA/19fX/8aGhr/AAAA/3BwcP8CAgL/AAAA/0hISP/y8vL/DAwM/8bGxv8wMDD/AAAA/8rKyv+ysrL/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/CQkJ/8XFxf/i4uL/39/f/w8PD/8AAAD/U1NT/7CwsP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AQEB/x4eHv8GBgb/AAAA/wAAAP8AAAD/AwMD/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAADmAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA5gAAAHwAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAB8AAAAAgAAAHwAAADmAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAADmAAAAfAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKAAAADAAAABgAAAAAQAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAAAXAAAAMYAAAD2AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD2AAAAxgAAAFwAAAAPAAAAAAAAAA8AAACVAAAA+AAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAPgAAACVAAAADwAAAFwAAAD4AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD4AAAAXAAAAMYAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAxgAAAPYAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA9gAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wEBAf8GBgb/AgIC/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8CAgL/CwsL/woKCv8BAQH/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/xoaGv+Hh4f/IyMj/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wsLC/9mZmb/oaGh/5ycnP9YWFj/CAgI/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/2FhYf/8/Pz/Xl5e/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/09PT//d3d3/dHR0/66urv/u7u7/QUFB/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/2VlZf//////iYmJ/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/2lpaf/i4uL/lpaW/35+fv/r6+v/sLCw/wQEBP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wICAv8GBgb/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/0tLS///////s7Oz/wAAAP8AAAD/CgoK/wkJCf8BAQH/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/xMTE/9ubm7/pKSk/8jIyP/u7u7/9fX1/39/f/8gICD/AAAA/wAAAP8xMTH/oaGh/8zMzP+2trb/aGho/wcHB/8AAAD/AAAA/1VVVf+7u7v/JiYm/wAAAP8WFhb/nZ2d/5GRkf8gICD/AAAA/zY2Nv+qqqr/z8/P/7Kysv9CQkL/AgIC/ywsLP/5+fn/3t7e/wkJCf97e3v/1NTU/9bW1v+6urr/XFxc/xkZGf+VlZX/zMzM/8jIyP+Ghob/ERER/wUFBf9OTk7/oqKi/5ubm/+UlJT/9vb2//r6+v+9vb3/HBwc/yIiIv/W1tb///////Pz8//29vb//v7+/8rKyv8oKCj/AQEB/5mZmf//////eXl5/wAAAP9YWFj/8vLy//j4+P/d3d3/bm5u//X19f/7+/v/4uLi/9/f3//p6en/dHR0/3V1df/v7+///f39/yYmJv+6urr/9vb2/+Li4v/Hx8f/7e3t//Dw8P/+/v7/5OTk/8nJyf/4+Pj/pKSk/zExMf/09PT//v7+/+fn5//q6ur/+/v7/9/f3//Jycn/t7e3/1paWv//////4ODg/11dXf9ra2v/39/f//39/f+fn5//DQ0N/5mZmf//////dHR0/wAAAP9iYmL/9fX1/8zMzP+Ghob/8vLy//////+/v7//LS0t/01NTf/r6+v//////+jo6P/29vb//////0FBQf8hISH/cnJy//Pz8/+ZmZn/Wlpa/+Xl5f/d3d3/Pz8//39/f//5+fn/0NDQ/0BAQP/9/f3/7e3t/zk5Of+UlJT/+fn5/+Hh4f9TU1P/ycnJ/2VlZf//////qqqq/wAAAP8CAgL/jo6O///////Z2dn/Hh4e/4uLi///////jY2N/wAAAP9RUVH/7+/v/9fX1/8cHBz/v7+///////+MjIz/BAQE/6CgoP/x8fH/09PT/6SkpP+goKD//////4yMjP8AAAD/BAQE/7Kysv/19fX/RUVF/2lpaf+QkJD/i4uL//b29v/4+Pj/W1tb/yAgIP/Y2Nj/+Pj4/wgICP8zMzP/5eXl//Dw8P9UVFT/Jycn/ykpKf/o6Oj/w8PD/wAAAP8GBgb/paWl///////Y2Nj/Hh4e/3BwcP//////5+fn/xMTE/8uLi7/5OTk/+fn5/84ODj/h4eH//////+pqan/Dg4O/7S0tP/Z2dn/oqKi/7Kysv9lZWX/9vb2/9/f3/8lJSX/AAAA/3Jycv//////m5ub/wAAAP9ERET/6+vr//v7+//Y2Nj/UVFR/xMTE/+zs7P//////0RERP8KCgr/0dHR//39/f+AgID/AgIC/wcHB/9mZmb/pKSk/wYGBv9fX1//7u7u//7+/v+jo6P/DQ0N/0ZGRv/+/v7//////6ampv9WVlb/5eXl/+7u7v9MTEz/Jycn/+fn5//s7Oz/Z2dn/1FRUf/Q0ND/2tra/2NjY/8uLi7/5OTk//r6+v+mpqb/Q0ND/6Kiov//////p6en/wAAAP9cXFz/8/Pz/8HBwf+Ghob/6Ojo/ykpKf+fn5///////4uLi/8AAAD/kpKS//////+lpaX/DQ0N/wAAAP8FBQX/EBAQ/1lZWf/s7Oz//////93d3f8yMjL/AQEB/yUlJf/o6Oj/6urq/9DQ0P/t7e3//Pz8/+bm5v81NTX/AAAA/01NTf/p6en/8fHx/8zMzP++vr7/dHR0/wcHB/8EBAT/tLS0//z8/P/r6+v/6Ojo//n5+f/7+/v/Wlpa/wAAAP8mJib/29vb/+rq6v/X19f//f39/y8vL/+Kior//////6Ghof8AAAD/PT09//////+vr6//EBAQ/wAAAP8AAAD/IyMj//X19f/8/Pz/5ubm/4CAgP8RERH/AAAA/xMTE/+4uLj//v7+/0hISP96enr/kpKS/0NDQ/8AAAD/AAAA/wEBAf8oKCj/gICA/5+fn/93d3f/FRUV/wAAAP8AAAD/RERE/8DAwP80NDT/aWlp/5KSkv9UVFT/BwcH/wAAAP8AAAD/IyMj/5KSkv+qqqr/ZGRk/wAAAP9CQkL/r6+v/0lJSf8AAAD/AQEB/7m5uf9ZWVn/AQEB/wAAAP8AAAD/dnZ2///////CwsL/Ojo6/87Ozv+Dg4P/BwcH/wQEBP99fX3/+/v7/7q6uv8ODg7/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wkJCf8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wYGBv8BAQH/AAAA/wAAAP8AAAD/cHBw//j4+P9wcHD/AQEB/5eXl/+zs7P/ERER/wAAAP84ODj/5+fn/+rq6v9AQED/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/GRkZ/93d3f/p6en/ycnJ//f39/+Ojo7/CAgI/wAAAP8CAgL/rKys/+np6f9CQkL/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/y4uLv+Ghob/n5+f/35+fv8iIiL/AAAA/wAAAP8AAAD/Kioq/3Fxcf8NDQ3/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8FBQX/CwsL/wMDA/8AAAD/AAAA/wAAAP8AAAD/AAAA/wICAv8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAPYAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA9gAAAMYAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAxgAAAFwAAAD4AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD4AAAAXAAAAA8AAACVAAAA+AAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAPgAAACVAAAADwAAAAAAAAAPAAAAXAAAAMYAAAD2AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD2AAAAxgAAAFwAAAAPAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==" InformativeScreenshot="80ec01a96552782f103d9cbae5757d8d.png" Selector="&lt;html app='firefox.exe' title='RoboShop | Home' /&gt;" Url="http://localhost:3000/createProduct" />
+                                        </uix:NApplicationCard.TargetApp>
+                                      </uix:NApplicationCard>
+                                    </Sequence>
+                                  </Sequence>
+                                </ActivityAction>
+                              </ui:ForEachRow.Body>
+                            </ui:ForEachRow>
+                            <ui:WriteTextFile File="{x:Null}" DisplayName="Write Text File" FileName="lastID.txt" sap:VirtualizedContainerService.HintSize="570,132" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[id]" />
+                            <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Body="Dear Customer, your Data has been Added Successfully" DisplayName="Send SMTP Mail Message" Email="[emailAddress]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="570,145" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="Record Added Successfully" To="[senderEmailAddress]">
+                              <ui:SendMail.Files>
+                                <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                              </ui:SendMail.Files>
+                              <ui:SendMail.Password>
+                                <InArgument x:TypeArguments="x:String">
+                                  <Literal x:TypeArguments="x:String" Value="" />
+                                </InArgument>
+                              </ui:SendMail.Password>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:SendMail>
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:ExcelApplicationScope.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:ExcelApplicationScope>
+                  </Sequence>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;No New Mail Found Starting With 'Product Details'.&quot;]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ForEach>
+  </Sequence>
+</Activity>
